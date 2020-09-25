@@ -9,7 +9,7 @@ public class BaekJoon1260 {
 	static int[][] arr;
 	static int point_cnt;
 	static int edge_cnt;
-	static int a_start_point;
+	static int s_start_point;
 	static int[] visited;
 	
 	public static void main(String[] args) throws IOException {
@@ -20,7 +20,7 @@ public class BaekJoon1260 {
 		
 		point_cnt = Integer.parseInt(temp[0]);
 		edge_cnt = Integer.parseInt(temp[1]);
-		a_start_point = Integer.parseInt(temp[2]);
+		s_start_point = Integer.parseInt(temp[2]);
 		
 		arr = new int[point_cnt+1][point_cnt+1];
 		visited = new int[point_cnt+1];
@@ -31,14 +31,14 @@ public class BaekJoon1260 {
 			arr[Integer.parseInt(edge[1])][Integer.parseInt(edge[0])] += 1;
 		}
 		
-		sb.append(a_start_point);
-		visited[a_start_point] = 1;
-		DFS(a_start_point,sb);
+		sb.append(s_start_point);
+		visited[s_start_point] = 1;
+		DFS(s_start_point,sb);
 		System.out.println(sb);
 		
 		visited = new int[point_cnt + 1];
 		
-		BFS(a_start_point);
+		BFS(s_start_point);
 	}
 	
 	public static void DFS(int start_point,StringBuilder sb) {
